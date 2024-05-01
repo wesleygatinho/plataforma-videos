@@ -1,0 +1,158 @@
+
+/* Cabeçalho */
+.cabecalho__container {
+    display: flex; 
+    justify-content: space-between; /* Centraliza os elementos no container */
+    align-items: center; /*O cabeçalho fica mais no centro */
+    position: fixed; /* Fixo na tela*/
+    top: 0; /*  Deixa o cabeçalho sempre em cima */
+}
+
+
+
+.cabecalho__pesquisar__item {
+    display: none; /*  Esconde a opção de pesquisa por default, mostrando apenas quando necessário */
+}
+
+
+
+.rodape__container {
+    display: flex; /* Cria um container para as informações do rodapé */
+    flex-direction: column; /*  Define que as divs vão se organizar verticalmente */
+    flex-wrap: wrap; /* Permite quebrar linha caso haja espaço insuficiente */
+}
+
+
+
+.superior__secao__container {
+    display: flex; /* Organiza os itens da seção superior em  uma linha */
+    align-items: center; /* Centraliza os items vertically */
+    white-space: nowrap; /* Impede que os itens sejam quebrados para a próxima linha */
+    overflow: scroll; /*  Adiciona barra de rolagem horizontal caso haja espaço insuficiente */
+    gap: 15px; /* Espaço entre os itens */
+}
+
+
+
+.menu__container {
+    position: fixed; /* Fixa a posição do menu lateral */
+    bottom: 0%; /*  Deixa o menu inferior à parte inferior da página */
+    height: 74px; /*  Altura do menu */
+    width: 100%;/* Largura total da página */
+}
+
+
+
+.menu__lista {
+    display: flex; /*  Organiza os itens na lista em uma linha */
+    justify-content: space-around; /* Distribui os itens ao longo da linha com espaços iguais entre eles */   
+    height: 100%; /* Altura completa do menu */
+}
+
+
+ 
+.menu__lista li {
+    align-self: center; /* Centraliza o item no eixo Y*/
+}
+
+
+.menu__lista:nth-child(2), /*  Estilos adicionais para o item do meio (central)*/
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+    display: none; /* Oculta os menus de contato e redes sociais por default */
+}
+
+
+
+.menu__itens {
+    display: flex;
+    flex-direction: column; /*  Coloca os itens numa coluna vertical */
+    gap: 5px;
+}
+
+
+.videos__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.videos__item {
+    height: 303px;
+    width: 280px;
+    flex-grow: 1;
+}
+
+
+@media (min-width: 834px) {
+    .cabecalho__pesquisar__item {
+        display: block; /*  Mostra a opção de pesquisa para dispositivos com largura superior ou igual a 834px */
+    }
+
+    .rodape__container {
+        justify-content: space-between; /* Alinha os itens do rodapé ao lado da barra lateral */
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+
+
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+}
+
+
+
+@media(min-width: 1440px) {
+
+    .menu__container {
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2), /*  Estilos adicionais para o item do meio (central)*/
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex; /* Oculta os menus de contato e redes sociais por default */
+    }
+
+    .menu__lista {
+        height: auto;
+        padding: 20px 17px 20px 15px; /*  Ajusta a margem inferior dos itens do menu */
+        gap: 15px;
+    }
+
+    .menu__itens {
+        flex-direction: row; /*  Alinha os itens em linha horizontal */ 
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu__lista:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .jogos {
+        order: 3;
+    }
+
+    .filmes {
+        order: 2;
+    }
+
+    .premium {
+        order: 1;
+    }
+
+    .maispagina {
+        order: 4;
+    }
+}
